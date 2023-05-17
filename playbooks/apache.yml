@@ -1,6 +1,6 @@
 ---
 - name: Install apache on Amazon linux 2
-  #  hosts: localhost
+  hosts: localhost
   become: true
 
   tasks:
