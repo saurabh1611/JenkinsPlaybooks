@@ -1,0 +1,21 @@
+---
+- name: Install apache on Amazon linux 2
+  #  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Update the package manager cache
+    yum:
+      name: '*'
+      state: latest
+
+  - name: Install Apache
+    yum:
+      name: httpd
+      state: latest
+
+  - name: Start apache and enable on boot
+    systemd:
+      name: httpd
+      state: started
+      enabled: true
